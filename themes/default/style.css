@@ -1,0 +1,261 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*
+h1 {
+	color:red; font-size:14px;
+}*/
+/* just for a test */
+
+body {
+	/*background:url(backgrounds/warty-final-ubuntu.png);*/
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+}
+
+.back_btn {
+	position:absolute;
+	top:35px;
+	left:20px;
+	width:45px;
+	height:30px;
+	background-repeat:no-repeat;
+	filter:alpha(opacity=6);
+	opacity:0.6;
+	-moz-opacity:0.6;
+}
+
+.noselect {
+	-moz-user-select: none;  
+	-webkit-user-select: none;  
+	-ms-user-select: none;  
+	cursor:default;
+}
+
+.cont {
+	position:absolute;
+	color:green;
+	border-radius: 3px;
+	background:#333;
+	filter:alpha(opacity=8);
+	opacity:0.8;
+	-moz-opacity:0.8;
+	text-align:center;
+}
+
+.cont p {
+	color:green;
+}
+
+.mask {
+	position:absolute;
+	background:#000;
+	filter:alpha(opacity=3);
+	opacity:0.3;
+	-moz-opacity:0.3;
+}
+
+.header {
+	position:absolute;
+	background:#333;
+	filter:alpha(opacity=8);
+	opacity:0.8;
+	-moz-opacity:0.8;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:28px;
+}
+
+.login {
+	position:absolute;
+	background:url(image/bg.jpg);
+	background-size:100% 100%;
+	border-radius:15px;
+	height:340px;
+	width:326px;
+	top:50%; 
+	left:50%; 
+	margin:-170px 0 0 -163px; 
+	/*right:50%;*/
+	filter:alpha(opacity=75);
+	opacity:0.75;
+	-moz-opacity:0.75;
+}
+
+.login img {
+	display:block;
+	margin:0 auto;
+}
+
+.title_text {
+	text-align:center;
+	font-family: "Microsoft YaHei";
+	font-size:25px;
+	line-height:20px;
+	font-weight:bold;
+	margin:auto;
+	color:green;
+	-moz-user-select: none;  
+	-webkit-user-select: none;  
+	-ms-user-select: none;  
+}
+
+.text1 {
+	position:absolute;
+	/* text-align:center; */
+	right:20%;
+	font-family: "Microsoft YaHei";
+	font-size:18px;
+	line-height:20px;
+	font-weight:bold;
+	margin:auto;
+	color:green;
+	-moz-user-select: none;  
+	-webkit-user-select: none;  
+	-ms-user-select: none;  
+}
+
+.text1_just {
+	font-family: "Microsoft YaHei";
+	font-size:18px;
+	line-height:20px;
+	font-weight:bold;
+	color:green;
+}
+
+.text2 {
+	/*text-align:center;*/
+	position:absolute;
+	right:75px;
+	font-family: "Microsoft YaHei";
+	font-size:18px;
+	line-height:20px;
+	font-weight:bold;
+	margin:auto;
+	-moz-user-select: none;  
+	-webkit-user-select: none;  
+	-ms-user-select: none;  
+}
+
+
+.text3 {
+	text-align:center;
+	color:red;
+	font-family: "Microsoft YaHei";
+	font-size:18px;
+	line-height:20px;
+	font-weight:bold;
+	margin:auto;
+	-moz-user-select: none;  
+	-webkit-user-select: none;  
+	-ms-user-select: none;  
+}
+
+.text3_select {
+	color:red;
+	font-family: "Microsoft YaHei";
+	font-size:18px;
+	line-height:20px;
+	font-weight:bold;
+}
+
+.text4 {
+	text-align:right;
+	color:white;
+	font-family: "Microsoft YaHei";
+	font-size:16px;
+	line-height:20px;
+	font-weight:bold;
+	margin:auto;
+	-moz-user-select: none;  
+	-webkit-user-select: none;  
+	-ms-user-select: none;  
+}
+
+.text4_just {
+	color:white;
+	font-family: "Microsoft YaHei";
+	font-size:16px;
+	line-height:20px;
+	font-weight:bold;
+}
+
+.text1_a:hover {
+	color:#060;
+	font-family: "Microsoft YaHei";
+	font-size:16px;
+	line-height:20px;
+	font-weight:bold;
+}
+
+.text1_a:link {
+	color:#060;
+	font-family: "Microsoft YaHei";
+	font-size:16px;
+	line-height:20px;
+	font-weight:bold;
+}
+
+.text1_a:active {
+	color:#060;
+	font-family: "Microsoft YaHei";
+	font-size:16px;
+	line-height:20px;
+	font-weight:bold;
+}
+
+.text1_a:visited {
+	color:#060;
+	font-family: "Microsoft YaHei";
+	font-size:16px;
+	line-height:20px;
+	font-weight:bold;
+}
+
+.canmiddle * {
+	vertical-align:middle;
+}
+
+/*
+.title_div {
+	position:absolute;
+	color:#006;
+	font-family: "Microsoft YaHei";
+	font-size:34px;
+	width:100%;
+	height:40px;
+	top:40px;
+}
+
+.title_p {
+	text-align:center;
+}*/
+
+.cont_div {
+	position:absolute;
+	color:#006;
+	font-family: "Microsoft YaHei";
+	font-size:18px;
+	width:100%;
+	height:40px;
+	top:40px;
+}
+
+.port_light {
+	width:20px;
+	height:20px;
+	position:absolute;
+}
+
+/*
+.icon1 {
+	position:absolute;
+	top:20px;
+	left:40px;
+}
+.icon2 {
+	position:absolute;
+	top:20px;
+	alignment-adjust:central;
+}*/

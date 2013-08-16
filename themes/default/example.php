@@ -8,7 +8,7 @@ $title = "Example";
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title><?php echo $title ?> - <?php echo $os ?> control panel</title>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="<?php echo $theme_path."/" ?>JQuery/jquery.min.js"></script>
 <!-- 引入JQ库 -->
 <style type="text/css">
 body{

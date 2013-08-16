@@ -4,7 +4,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Welcome to <?php echo $os ?> control panel</title>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+<script type="text/javascript" src="<?php echo $theme_path."/" ?>JQuery/jquery.min.js"></script>
+<script type="text/javascript" src="<?php echo $theme_path."/" ?>JQuery/jquery.cookie.js"></script>
 <!-- 引入JQ库 -->
 <style type="text/css">
 body{
@@ -34,9 +36,10 @@ require $theme_path."/header.php";
 <?php
 $mqu = mysql_query("SELECT * FROM `menu`;");
 while($getarr = mysql_fetch_array($mqu,MYSQL_ASSOC)){
+	$rid = trim($getarr['id'],"#");
 ?>
-<div class="cont" id="<?php echo trim($getarr['id'],"#") ?>" style="top:<?php echo $getarr['y'] ?>px;left:<?php echo $getarr['x'] ?>px;width:<?php echo $getarr['width'] ?>px;<?php if($getarr['height'] != 0){echo "height:".$getarr['height']."px;";} ?>">
-<p style="color:<?php echo $getarr['title_color'] ?>"><!--小应用--><?php echo $getarr['title']; ?></p>
+<div class="cont" id="<?php echo $rid ?>" style="top:<?php if(isset($_COOKIE['locy_'.$rid])) echo $_COOKIE['locy_'.$rid]; else echo $getarr['y']; ?>px;left:<?php if(isset($_COOKIE['locy_'.$rid])) echo $_COOKIE['locx_'.$rid]; else echo $getarr['x']; ?>px;width:<?php echo $getarr['width'] ?>px;<?php if($getarr['height'] != 0){echo "height:".$getarr['height']."px;";} ?>">
+<p id="<?php echo trim($getarr['id'],"#") ?>_title" style="color:<?php echo $getarr['title_color'] ?>"><!--小应用--><?php echo $getarr['title']; ?></p>
 <!--<div>-->
 <?php
 $fl = explode("#",$getarr['things']);
@@ -71,7 +74,10 @@ $(document).ready(function(){
 	mousefin = function(e){
 	//alert("up");
 		//alert(drag);
-		sendloc = $.ajax({url:"<?php echo $theme_path."/ajax/update_loc.php?x=" ?>"+rx+"&y="+ry+"&things="+$(drag).attr("id"),async:false});
+		/*sendloc = $.ajax({url:"<!--?php echo $theme_path."/ajax/update_loc.php?x=" ?-->"+rx+"&y="+ry+"&things="+$(drag).attr("id"),async:false});*/
+		/*NOT AJAX TO MYSQL*/
+		$.cookie("locx_"+$(drag).attr("id"),rx,{expires: 365}); 
+		$.cookie("locy_"+$(drag).attr("id"),ry,{expires: 365}); 
 		//alert(sendloc.responseText);
 		//$(drag).unbind("mouseleave");
 		//$(drag).unbind("mouseup");
@@ -99,7 +105,7 @@ $(document).ready(function(){
 		//alert(mousex+"/"+mousey);
 	}
 	candrag = function(e){
-		drag = "#"+$(this).attr("id");//"#menu1";
+		drag = "#"+$(this).parent().attr("id");//"#menu1";
 		drag_things = e;
 		//alert("down");
 		ry = parseInt($(drag).css("top"));//.split("px");
@@ -125,7 +131,7 @@ $(document).ready(function(){
 	while($getarr = mysql_fetch_array($mqu,MYSQL_ASSOC)){
 		if($getarr['candrag'] == true){
 	?>
-	$("<?php echo $getarr['id'] ?>").mousedown(candrag);
+	$("<?php echo $getarr['id']; ?>_title").mousedown(candrag);
 	<?php
 		}
 		$fl = explode("#",$getarr['things']);

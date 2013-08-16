@@ -1,5 +1,5 @@
 <?php
-$name = "CbOS Theme";
+$name = "CbOS Default Theme";
 $theme_dir = "default";
 $discription = "A theme for CbOS control panel.";
 $author = "TLL";
